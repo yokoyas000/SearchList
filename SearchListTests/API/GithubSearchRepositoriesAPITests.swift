@@ -6,11 +6,8 @@
 @testable import SearchList
 import XCTest
 
-class GithubSearchRepositoriesAPITests {
+class GithubSearchRepositoriesAPITests: XCTestCase {
 
-    func testRequest() {
-        let result = GithubSearchRepositoriesAPI.get(word: "wwdc")
-        XCTAssertEqual("wwdc", result)
-    }
+    func testRequest() {}
 
 }

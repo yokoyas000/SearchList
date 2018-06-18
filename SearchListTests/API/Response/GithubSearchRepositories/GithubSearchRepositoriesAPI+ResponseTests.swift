@@ -6,11 +6,16 @@
 @testable import SearchList
 import XCTest
 
-import Foundation
 class GithubSearchRepositoriesAPI_ResponseTests: XCTestCase {
 
     func testDecode() {
-        let result = JsonReader.dictionary(from: R.file.githubSearchRepositoriesAPIResponseJson.path()!)
-        print(result)
+        XCTAssertEqual(
+            GithubSearchRepositoriesAPIResponseCatalog.twoRepositories.expected,
+            try! GithubSearchRepositoriesAPI.Response.create(
+                from: GithubSearchRepositoriesAPIResponseCatalog.twoRepositories.responseData
+            ),
+            GithubSearchRepositoriesAPIResponseCatalog.twoRepositories.description
+        )
     }
 }
+
