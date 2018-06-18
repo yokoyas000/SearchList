@@ -8,16 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		35C0222AAB75B5F8853CEFE0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C0297893666FFAA98E9440 /* ViewController.swift */; };
+		35C0223867BEF45913FC22D0 /* GithubSearchRepositoriesAPIResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 35C029D584A470613DA40354 /* GithubSearchRepositoriesAPIResponse.json */; };
 		35C0224B2E4415EE1DC04125 /* GithubSearchRepositoriesAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C022E6213187D2D0F44E86 /* GithubSearchRepositoriesAPITests.swift */; };
 		35C022A543928346E0000416 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35C02DFC8D1585C20283244A /* Assets.xcassets */; };
 		35C023732E5BD0C6E9EDE9A0 /* GithubSearchRepositoriesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C02344A60C0AFCE76804E7 /* GithubSearchRepositoriesAPI.swift */; };
+		35C0253E3A1FEB12B1479179 /* GithubSearchRepositoriesAPI+ResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C024983460CF1BE8566371 /* GithubSearchRepositoriesAPI+ResponseTests.swift */; };
 		35C025892CCA35846B954948 /* SearchListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C026D7CD12A52D712B08EC /* SearchListUITests.swift */; };
 		35C02871CDDEA5C2A699B7C6 /* SearchListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C028E9EF5E3C274B394068 /* SearchListTests.swift */; };
 		35C028775942BFF3F48324FC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35C02135CFD97D1FCA8912E2 /* Main.storyboard */; };
 		35C02B298695D682117AAE80 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C020DB961345E26BC26DDE /* AppDelegate.swift */; };
 		35C02C43556D29BC6890B720 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35C0296380EE7BAABF13A5CA /* LaunchScreen.storyboard */; };
+		35C02D230AE58D027B3D7353 /* JsonReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C0269193A51D46A4873288 /* JsonReader.swift */; };
 		3E4A1ABA20D7960D007D58D1 /* Rswift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4A1AB920D7960D007D58D1 /* Rswift.framework */; };
 		3E4A1ABE20D799FC007D58D1 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4A1ABD20D799FC007D58D1 /* R.generated.swift */; };
+		3E4A1AC120D7A518007D58D1 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4A1AC020D7A518007D58D1 /* R.generated.swift */; };
+		3E4A1AC220D7A782007D58D1 /* Rswift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4A1AB920D7960D007D58D1 /* Rswift.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,12 +46,15 @@
 		35C020DB961345E26BC26DDE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		35C022E6213187D2D0F44E86 /* GithubSearchRepositoriesAPITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GithubSearchRepositoriesAPITests.swift; sourceTree = "<group>"; };
 		35C02344A60C0AFCE76804E7 /* GithubSearchRepositoriesAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GithubSearchRepositoriesAPI.swift; sourceTree = "<group>"; };
+		35C024983460CF1BE8566371 /* GithubSearchRepositoriesAPI+ResponseTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GithubSearchRepositoriesAPI+ResponseTests.swift"; sourceTree = "<group>"; };
 		35C025B88D29A2A52C6B35E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		35C02660421713D33778F940 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		35C0269193A51D46A4873288 /* JsonReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonReader.swift; sourceTree = "<group>"; };
 		35C026D7CD12A52D712B08EC /* SearchListUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchListUITests.swift; sourceTree = "<group>"; };
 		35C027C449342BB9DAC1D413 /* SearchListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SearchListTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		35C028E9EF5E3C274B394068 /* SearchListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchListTests.swift; sourceTree = "<group>"; };
 		35C0297893666FFAA98E9440 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		35C029D584A470613DA40354 /* GithubSearchRepositoriesAPIResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GithubSearchRepositoriesAPIResponse.json; sourceTree = "<group>"; };
 		35C02A059A960A8C0CD9989D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		35C02C7EFA4835D698D0642A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		35C02DDBBE8EC89BC7C7CAA5 /* SearchList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SearchList.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -55,6 +63,7 @@
 		35C02FEC3073F90C8894673F /* SearchListUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SearchListUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E4A1AB920D7960D007D58D1 /* Rswift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Rswift.framework; path = Carthage/Build/iOS/Rswift.framework; sourceTree = "<group>"; };
 		3E4A1ABD20D799FC007D58D1 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
+		3E4A1AC020D7A518007D58D1 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E4A1AC220D7A782007D58D1 /* Rswift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,12 +102,31 @@
 			path = SearchListUITests;
 			sourceTree = "<group>";
 		};
+		35C021AC36FF2EF96C7B058B /* GithubSearchRepositories */ = {
+			isa = PBXGroup;
+			children = (
+				35C029D584A470613DA40354 /* GithubSearchRepositoriesAPIResponse.json */,
+				35C024983460CF1BE8566371 /* GithubSearchRepositoriesAPI+ResponseTests.swift */,
+			);
+			path = GithubSearchRepositories;
+			sourceTree = "<group>";
+		};
+		35C023DB199BD2ADD79D38C0 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				35C0269193A51D46A4873288 /* JsonReader.swift */,
+				3E4A1AC020D7A518007D58D1 /* R.generated.swift */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
 		35C025354395EBBF2CE32150 /* SearchListTests */ = {
 			isa = PBXGroup;
 			children = (
 				35C02F97211995B1A9037CE1 /* Info.plist */,
 				35C028E9EF5E3C274B394068 /* SearchListTests.swift */,
 				35C02FF858C83BB3365ED813 /* API */,
+				35C023DB199BD2ADD79D38C0 /* Resource */,
 			);
 			path = SearchListTests;
 			sourceTree = "<group>";
@@ -109,6 +138,14 @@
 				3E4A1ABD20D799FC007D58D1 /* R.generated.swift */,
 			);
 			path = Resource;
+			sourceTree = "<group>";
+		};
+		35C028757C9B6B7B3F7EF65F /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				35C021AC36FF2EF96C7B058B /* GithubSearchRepositories */,
+			);
+			path = Response;
 			sourceTree = "<group>";
 		};
 		35C028C6781BDE3152F5E01F /* Products */ = {
@@ -158,6 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				35C022E6213187D2D0F44E86 /* GithubSearchRepositoriesAPITests.swift */,
+				35C028757C9B6B7B3F7EF65F /* Response */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -214,6 +252,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 35C0217C0F20B81921B1F962 /* Build configuration list for PBXNativeTarget "SearchListTests" */;
 			buildPhases = (
+				3E4A1ABF20D7A4A0007D58D1 /* R.swift */,
 				35C02BC3D38104B849EE5E2E /* Sources */,
 				35C028BD0F4664979E0A8448 /* Frameworks */,
 				35C02FE4B7F8BBE48E071715 /* Resources */,
@@ -277,6 +316,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35C0223867BEF45913FC22D0 /* GithubSearchRepositoriesAPIResponse.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -313,6 +353,20 @@
 			shellPath = /bin/sh;
 			shellScript = "\"$SRCROOT/rswift\" generate \"$SRCROOT/SearchList/Resource\"";
 		};
+		3E4A1ABF20D7A4A0007D58D1 /* R.swift */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = R.swift;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$SRCROOT/rswift\" generate \"$SRCROOT/SearchListTests/Resource\"";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -341,6 +395,9 @@
 			files = (
 				35C02871CDDEA5C2A699B7C6 /* SearchListTests.swift in Sources */,
 				35C0224B2E4415EE1DC04125 /* GithubSearchRepositoriesAPITests.swift in Sources */,
+				35C0253E3A1FEB12B1479179 /* GithubSearchRepositoriesAPI+ResponseTests.swift in Sources */,
+				35C02D230AE58D027B3D7353 /* JsonReader.swift in Sources */,
+				3E4A1AC120D7A518007D58D1 /* R.generated.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -383,6 +440,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SearchList.app/SearchList";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = SearchListTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = yokoyas000.SearchListTests;
@@ -480,6 +541,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SearchList.app/SearchList";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = SearchListTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = yokoyas000.SearchListTests;
