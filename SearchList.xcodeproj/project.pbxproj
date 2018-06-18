@@ -9,14 +9,15 @@
 /* Begin PBXBuildFile section */
 		35C0222AAB75B5F8853CEFE0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C0297893666FFAA98E9440 /* ViewController.swift */; };
 		35C0224B2E4415EE1DC04125 /* GithubSearchRepositoriesAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C022E6213187D2D0F44E86 /* GithubSearchRepositoriesAPITests.swift */; };
+		35C022A543928346E0000416 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35C02DFC8D1585C20283244A /* Assets.xcassets */; };
 		35C023732E5BD0C6E9EDE9A0 /* GithubSearchRepositoriesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C02344A60C0AFCE76804E7 /* GithubSearchRepositoriesAPI.swift */; };
 		35C025892CCA35846B954948 /* SearchListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C026D7CD12A52D712B08EC /* SearchListUITests.swift */; };
 		35C02871CDDEA5C2A699B7C6 /* SearchListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C028E9EF5E3C274B394068 /* SearchListTests.swift */; };
 		35C028775942BFF3F48324FC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35C02135CFD97D1FCA8912E2 /* Main.storyboard */; };
 		35C02B298695D682117AAE80 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C020DB961345E26BC26DDE /* AppDelegate.swift */; };
 		35C02C43556D29BC6890B720 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35C0296380EE7BAABF13A5CA /* LaunchScreen.storyboard */; };
-		35C02E43359B26C3BE1656A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35C026ABBF32DB884DE052D1 /* Assets.xcassets */; };
 		3E4A1ABA20D7960D007D58D1 /* Rswift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4A1AB920D7960D007D58D1 /* Rswift.framework */; };
+		3E4A1ABE20D799FC007D58D1 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4A1ABD20D799FC007D58D1 /* R.generated.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,7 +43,6 @@
 		35C02344A60C0AFCE76804E7 /* GithubSearchRepositoriesAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GithubSearchRepositoriesAPI.swift; sourceTree = "<group>"; };
 		35C025B88D29A2A52C6B35E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		35C02660421713D33778F940 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		35C026ABBF32DB884DE052D1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		35C026D7CD12A52D712B08EC /* SearchListUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchListUITests.swift; sourceTree = "<group>"; };
 		35C027C449342BB9DAC1D413 /* SearchListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SearchListTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		35C028E9EF5E3C274B394068 /* SearchListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchListTests.swift; sourceTree = "<group>"; };
@@ -50,9 +50,11 @@
 		35C02A059A960A8C0CD9989D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		35C02C7EFA4835D698D0642A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		35C02DDBBE8EC89BC7C7CAA5 /* SearchList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SearchList.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		35C02DFC8D1585C20283244A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		35C02F97211995B1A9037CE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		35C02FEC3073F90C8894673F /* SearchListUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SearchListUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E4A1AB920D7960D007D58D1 /* Rswift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Rswift.framework; path = Carthage/Build/iOS/Rswift.framework; sourceTree = "<group>"; };
+		3E4A1ABD20D799FC007D58D1 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,15 @@
 			path = SearchListTests;
 			sourceTree = "<group>";
 		};
+		35C0271B3F7DC152404ED7A1 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				35C02DFC8D1585C20283244A /* Assets.xcassets */,
+				3E4A1ABD20D799FC007D58D1 /* R.generated.swift */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
 		35C028C6781BDE3152F5E01F /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -114,12 +125,12 @@
 			isa = PBXGroup;
 			children = (
 				35C02A059A960A8C0CD9989D /* Info.plist */,
-				35C026ABBF32DB884DE052D1 /* Assets.xcassets */,
 				35C0296380EE7BAABF13A5CA /* LaunchScreen.storyboard */,
 				35C020DB961345E26BC26DDE /* AppDelegate.swift */,
 				35C02135CFD97D1FCA8912E2 /* Main.storyboard */,
 				35C0297893666FFAA98E9440 /* ViewController.swift */,
 				35C02BA95A8EFCC68A23956A /* API */,
+				35C0271B3F7DC152404ED7A1 /* Resource */,
 			);
 			path = SearchList;
 			sourceTree = "<group>";
@@ -256,9 +267,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				35C02E43359B26C3BE1656A9 /* Assets.xcassets in Resources */,
 				35C02C43556D29BC6890B720 /* LaunchScreen.storyboard in Resources */,
 				35C028775942BFF3F48324FC /* Main.storyboard in Resources */,
+				35C022A543928346E0000416 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,7 +311,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"$SRCROOT/rswift\" generate \"$SRCROOT\"";
+			shellScript = "\"$SRCROOT/rswift\" generate \"$SRCROOT/SearchList/Resource\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -312,6 +323,7 @@
 				35C02B298695D682117AAE80 /* AppDelegate.swift in Sources */,
 				35C0222AAB75B5F8853CEFE0 /* ViewController.swift in Sources */,
 				35C023732E5BD0C6E9EDE9A0 /* GithubSearchRepositoriesAPI.swift in Sources */,
+				3E4A1ABE20D799FC007D58D1 /* R.generated.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
