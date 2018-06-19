@@ -5,9 +5,20 @@
 
 @testable import SearchList
 import XCTest
+import PromiseKit
 
 class GithubSearchRepositoriesAPITests: XCTestCase {
 
-    func testRequest() {}
+    func testRequest() {
+        let expected = GithubSearchRepositoriesAPIResponseCatalog.twoRepositories.expected
+
+        AsyncTestKit.wait(testCase: self, description: "GET GithubSearchRepositoriesAPI") {
+            return GithubSearchRepositoriesAPI.get(word: "wwdc")
+                .done { response in
+                    XCTAssertEqual(expected, response)
+                }
+        }
+
+    }
 
 }

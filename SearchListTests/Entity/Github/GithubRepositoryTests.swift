@@ -5,7 +5,6 @@
 
 @testable import SearchList
 import XCTest
-import Foundation
 
 class GithubRepositoryTests: XCTestCase {
 

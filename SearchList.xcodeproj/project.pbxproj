@@ -17,6 +17,7 @@
 		35C0246EE24A171613FEBC9C /* GithubSearchRepositoriesAPI+Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C023D401DD6018A27A809D /* GithubSearchRepositoriesAPI+Response.swift */; };
 		35C0253E3A1FEB12B1479179 /* GithubSearchRepositoriesAPI+ResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C024983460CF1BE8566371 /* GithubSearchRepositoriesAPI+ResponseTests.swift */; };
 		35C025892CCA35846B954948 /* SearchListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C026D7CD12A52D712B08EC /* SearchListUITests.swift */; };
+		35C026E145780947A13AFA2D /* AsyncTestKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C02D23C45977DA22B1FC26 /* AsyncTestKit.swift */; };
 		35C027BB3446CB627D2C7DB4 /* GithubRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C02E112C8DF2E9AEE1052C /* GithubRepositoryTests.swift */; };
 		35C02871CDDEA5C2A699B7C6 /* SearchListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C028E9EF5E3C274B394068 /* SearchListTests.swift */; };
 		35C028775942BFF3F48324FC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35C02135CFD97D1FCA8912E2 /* Main.storyboard */; };
@@ -28,6 +29,8 @@
 		3E4A1ABE20D799FC007D58D1 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4A1ABD20D799FC007D58D1 /* R.generated.swift */; };
 		3E4A1AC120D7A518007D58D1 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4A1AC020D7A518007D58D1 /* R.generated.swift */; };
 		3E4A1AC220D7A782007D58D1 /* Rswift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4A1AB920D7960D007D58D1 /* Rswift.framework */; };
+		3EC69A8820D8DD4100EFEB72 /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EC69A8720D8DD4100EFEB72 /* PromiseKit.framework */; };
+		3EC69A8920D8DEB300EFEB72 /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EC69A8720D8DD4100EFEB72 /* PromiseKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +68,7 @@
 		35C029D584A470613DA40354 /* GithubSearchRepositoriesAPIResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GithubSearchRepositoriesAPIResponse.json; sourceTree = "<group>"; };
 		35C02A059A960A8C0CD9989D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		35C02C7EFA4835D698D0642A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		35C02D23C45977DA22B1FC26 /* AsyncTestKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncTestKit.swift; sourceTree = "<group>"; };
 		35C02DDBBE8EC89BC7C7CAA5 /* SearchList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SearchList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		35C02DFC8D1585C20283244A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		35C02E112C8DF2E9AEE1052C /* GithubRepositoryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GithubRepositoryTests.swift; sourceTree = "<group>"; };
@@ -74,6 +78,7 @@
 		3E4A1AB920D7960D007D58D1 /* Rswift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Rswift.framework; path = Carthage/Build/iOS/Rswift.framework; sourceTree = "<group>"; };
 		3E4A1ABD20D799FC007D58D1 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		3E4A1AC020D7A518007D58D1 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
+		3EC69A8720D8DD4100EFEB72 /* PromiseKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PromiseKit.framework; path = Carthage/Build/iOS/PromiseKit.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3EC69A8920D8DEB300EFEB72 /* PromiseKit.framework in Frameworks */,
 				3E4A1AC220D7A782007D58D1 /* Rswift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -89,6 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3EC69A8820D8DD4100EFEB72 /* PromiseKit.framework in Frameworks */,
 				3E4A1ABA20D7960D007D58D1 /* Rswift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -139,6 +146,7 @@
 				35C02FF858C83BB3365ED813 /* API */,
 				35C023DB199BD2ADD79D38C0 /* Resource */,
 				35C026764F9EF7550DC1F3F0 /* Entity */,
+				35C02D23C45977DA22B1FC26 /* AsyncTestKit.swift */,
 			);
 			path = SearchListTests;
 			sourceTree = "<group>";
@@ -250,6 +258,7 @@
 		3E4A1AB820D7960C007D58D1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3EC69A8720D8DD4100EFEB72 /* PromiseKit.framework */,
 				3E4A1AB920D7960D007D58D1 /* Rswift.framework */,
 			);
 			name = Frameworks;
@@ -377,10 +386,12 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/Rswift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/PromiseKit.framework",
 			);
 			name = Carthage;
 			outputPaths = (
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Rswift.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/PromiseKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -450,6 +461,7 @@
 				3E4A1AC120D7A518007D58D1 /* R.generated.swift in Sources */,
 				35C027BB3446CB627D2C7DB4 /* GithubRepositoryTests.swift in Sources */,
 				35C020F7A7BB0A3AC7673D76 /* GithubSearchRepositoriesAPIResponseCatalog.swift in Sources */,
+				35C026E145780947A13AFA2D /* AsyncTestKit.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
