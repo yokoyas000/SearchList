@@ -23,8 +23,8 @@ import PromiseKit
  ```
  **/
 enum AsyncTestKit {
-    static func wait<T>(testCase: XCTestCase, description: String, block: () -> Promise<T>) {
-        let e = testCase.expectation(description: description)
+    static func wait<T>(testCase: XCTestCase, block: () -> Promise<T>) {
+        let e = testCase.expectation(description: "async test with Promise")
 
         block()
             .done { _ in

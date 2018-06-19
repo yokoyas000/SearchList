@@ -7,28 +7,28 @@ import Foundation
 import PromiseKit
 
 /**
- Githubの検索APIを利用する関数の名前空間
+ Githubの検索APIを利用して検索結果を取得する
  see: https://developer.github.com/v3/search/#search-repositories
  **/
-enum GithubSearchRepositoriesAPI {
-    static func get(word: String) -> Promise<GithubSearchRepositoriesAPI.Response> {
-        let response = GithubSearchRepositoriesAPI.Response(
-            repositories: [
-                GithubRepository(
-                    id: GithubRepositoryID(34222505),
-                    name: "WWDC",
-                    fullName: "insidegui/WWDC"
-                ),
-                GithubRepository(
-                    id: GithubRepositoryID(11025353),
-                    name: "wwdc-downloader",
-                    fullName: "ohoachuck/wwdc-downloader"
-                ),
-            ]
-        )
+protocol GithubSearchRepositoriesAPIProtocol {
+    func get(word: String) -> Promise<GithubSearchRepositoriesAPIResponse>
+}
 
-        return Promise<GithubSearchRepositoriesAPI.Response> { (resolver: Resolver<GithubSearchRepositoriesAPI.Response>) -> Void in
-            resolver.fulfill(response)
-        }
+
+
+struct GithubSearchRepositoriesAPI: GithubSearchRepositoriesAPIProtocol {
+
+    private let resource: GithubAPIResourceProtocol
+
+    init(resource: GithubAPIResourceProtocol) {
+        self.resource = resource
+    }
+
+    func get(word: String) -> Promise<GithubSearchRepositoriesAPIResponse> {
+        return self.resource.get()
+            .map { data -> GithubSearchRepositoriesAPIResponse in
+                let response = try GithubSearchRepositoriesAPIResponse.create(from: data)
+                return response
+            }
     }
 }

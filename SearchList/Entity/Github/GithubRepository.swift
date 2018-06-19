@@ -11,6 +11,8 @@ struct GithubRepository: Equatable {
     let fullName: String
 }
 
+
+
 extension GithubRepository: Decodable {
     static func create(from data: Data) throws -> GithubRepository {
         return try JSONDecoder().decode(GithubRepository.self, from: data)
@@ -32,4 +34,3 @@ extension GithubRepository: Decodable {
         case fullName = "full_name"
     }
 }
-

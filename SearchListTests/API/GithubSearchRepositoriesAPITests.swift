@@ -10,10 +10,13 @@ import PromiseKit
 class GithubSearchRepositoriesAPITests: XCTestCase {
 
     func testRequest() {
+        let api = GithubSearchRepositoriesAPI(
+            resource: GithubAPIResourceStub(jsonData: GithubSearchRepositoriesAPIResponseCatalog.twoRepositories.responseData)
+        )
         let expected = GithubSearchRepositoriesAPIResponseCatalog.twoRepositories.expected
 
-        AsyncTestKit.wait(testCase: self, description: "GET GithubSearchRepositoriesAPI") {
-            return GithubSearchRepositoriesAPI.get(word: "wwdc")
+        AsyncTestKit.wait(testCase: self) {
+            return api.get(word: "test")
                 .done { response in
                     XCTAssertEqual(expected, response)
                 }
@@ -21,4 +24,16 @@ class GithubSearchRepositoriesAPITests: XCTestCase {
 
     }
 
+}
+
+struct GithubAPIResourceStub: GithubAPIResourceProtocol {
+    private let jsonData: Data
+
+    init(jsonData: Data) {
+        self.jsonData = jsonData
+    }
+
+    func get() -> Promise<Data> {
+        return Promise<Data>.value(self.jsonData)
+    }
 }

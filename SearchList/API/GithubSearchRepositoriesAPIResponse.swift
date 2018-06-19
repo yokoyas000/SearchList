@@ -11,19 +11,17 @@ import Foundation
 
  see also: GithubSearchRepositoriesAPI
  **/
-extension GithubSearchRepositoriesAPI {
-    struct Response: Equatable {
-        let repositories: [GithubRepository]
+struct GithubSearchRepositoriesAPIResponse: Equatable {
+    let repositories: [GithubRepository]
 
-        static func create(from data: Data) throws -> GithubSearchRepositoriesAPI.Response {
-            return try JSONDecoder().decode(GithubSearchRepositoriesAPI.Response.self, from: data)
-        }
+    static func create(from data: Data) throws -> GithubSearchRepositoriesAPIResponse {
+        return try JSONDecoder().decode(GithubSearchRepositoriesAPIResponse.self, from: data)
     }
 }
 
-extension GithubSearchRepositoriesAPI.Response: Decodable {
+extension GithubSearchRepositoriesAPIResponse: Decodable {
     init(from decoder: Decoder) throws {
-        let values = try decoder.container(keyedBy: GithubSearchRepositoriesAPI.Response.CodingKeys.self)
+        let values = try decoder.container(keyedBy: GithubSearchRepositoriesAPIResponse.CodingKeys.self)
         self.repositories = try values.decode([GithubRepository].self, forKey: .items)
     }
 

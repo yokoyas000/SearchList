@@ -15,14 +15,14 @@ enum GithubSearchRepositoriesAPIResponseCatalog {
     struct Entry {
         let description: String
         let responseData: Data
-        let expected: GithubSearchRepositoriesAPI.Response
+        let expected: GithubSearchRepositoriesAPIResponse
     }
 
     static let twoRepositories = Entry(
         description: "リポジトリが２つ(複数)の場合",
         responseData: JsonReader.data(from: R.file.githubSearchRepositoriesAPIResponseJson.path()!),
         expected:
-            GithubSearchRepositoriesAPI.Response(
+            GithubSearchRepositoriesAPIResponse(
                 repositories: [
                     GithubRepository(
                         id: GithubRepositoryID(34222505),
