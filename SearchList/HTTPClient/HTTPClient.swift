@@ -6,8 +6,6 @@
 import Foundation
 import PromiseKit
 
-
-
 protocol HTTPClientProtocol {
     // HTTP リクエストを送信する
     // NOTE: Error の詳細を伝える為、throws ではなく Result 型を利用する

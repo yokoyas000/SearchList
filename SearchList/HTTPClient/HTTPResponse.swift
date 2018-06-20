@@ -5,7 +5,7 @@
 
 import Foundation
 
-struct HTTPResponse {
+struct HTTPResponse: Equatable {
     let statusCode: HTTPStatusCode
     let headers: [String: String]
     let payload: Data
