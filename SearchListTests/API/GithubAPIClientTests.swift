@@ -7,6 +7,7 @@
 import XCTest
 import Foundation
 import PromiseKit
+import MirrorDiffKit
 
 class GithubAPIClientTests: XCTestCase {
 
@@ -22,15 +23,37 @@ class GithubAPIClientTests: XCTestCase {
         }
     }
 
+    // HTTPClient へ想定通りのリクエストを渡せているか確認する
+    func testRequest() {
+        let githubRequest = GithubAPIRequest(
+            path: "/test",
+            queries: [URLQueryItem(name: "name", value: "value")],
+            method: .get
+        )
+        let httpClientSpy = HTTPClientSpy()
+        let apiClient = GithubAPIClient(httpClient: httpClientSpy)
 
-    private let exampleRequest = HTTPRequest(
-        url: URL(string: "https://example")!,
-        queries: [],
-        headers: [:],
-        method: .get
-    )
+        let expected = HTTPRequest(
+            url: URL(string: "https://api.github.com/test")!,
+            queries: [URLQueryItem(name: "name", value: "value")],
+            headers: [:],
+            method: .get
+        )
 
-    // HTTP レスポンスを任意の形式に変換できているか確認する
+
+        PromiseTestKit.waitGuarantee(testCase: self) {
+            return apiClient.fetch(request: githubRequest)
+                .done { _ in
+                    XCTAssertEqual(
+                        expected, httpClientSpy.callArgs.first!,
+                        diff(between: expected, and: httpClientSpy.callArgs.first!)
+                    )
+                }
+        }
+
+    }
+
+    // HTTPClient からのレスポンスを任意の形式に変換できているか確認する
     func testFetchWhenGetResponse() {
         let testCases: [UInt: TestCase] = [
             #line: TestCase(
@@ -64,6 +87,12 @@ class GithubAPIClientTests: XCTestCase {
             )
         ]
 
+        let exampleRequest = GithubAPIRequest(
+            path: "",
+            queries: [],
+            method: .get
+        )
+
         testCases.forEach { testCase in
             PromiseTestKit.waitGuarantee(testCase: self) {
                 return testCase.value.apiClient().fetch(request: exampleRequest)
@@ -94,5 +123,15 @@ struct HTTPClientStub: HTTPClientProtocol {
 
     func fetch(request: HTTPRequest) -> PromiseKit.Guarantee<SearchList.Result<HTTPResponse, HTTPClientError>> {
         return PromiseKit.Guarantee<SearchList.Result<HTTPResponse, HTTPClientError>>.value(self.result)
+    }
+}
+
+class HTTPClientSpy: HTTPClientProtocol {
+    var callArgs: [HTTPRequest] = []
+
+    func fetch(request: HTTPRequest) -> Guarantee<SearchList.Result<HTTPResponse, HTTPClientError>> {
+        self.callArgs.append(request)
+
+        return PromiseKit.Guarantee<SearchList.Result<HTTPResponse, HTTPClientError>>.value(.failure(.notFoundDataOrResponse(debugInfo: "")))
     }
 }

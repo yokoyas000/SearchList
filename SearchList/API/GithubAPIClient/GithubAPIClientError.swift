@@ -4,6 +4,9 @@
 //
 
 enum GithubAPIClientError: Error, Equatable {
+    // リクエストの作成に失敗した場合
+    case failedCreatingRequest(using: GithubAPIRequest)
+
     // HTTP リクエスト送信/受信の段階でエラーがある場合
     case httpClientError(error: HTTPClientError)
 
