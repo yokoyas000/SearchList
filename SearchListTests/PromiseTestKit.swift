@@ -22,7 +22,10 @@ import PromiseKit
   }
  ```
  **/
-enum AsyncTestKit {
+enum PromiseTestKit {
+
+    static let TIMEOUT = 3.0
+
     static func wait<T>(testCase: XCTestCase, block: () -> Promise<T>) {
         let e = testCase.expectation(description: "async test with Promise")
 
@@ -35,6 +38,17 @@ enum AsyncTestKit {
                 e.fulfill()
             }
 
-        testCase.wait(for: [e], timeout: 1.0)
+        testCase.wait(for: [e], timeout: TIMEOUT)
+    }
+
+    static func waitGuarantee<T>(testCase: XCTestCase, block: () -> Guarantee<T>) {
+        let e = testCase.expectation(description: "async test with Guarantee")
+
+        block()
+            .done { _ in
+                e.fulfill()
+            }
+
+        testCase.wait(for: [e], timeout: TIMEOUT)
     }
 }

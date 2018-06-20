@@ -24,7 +24,7 @@ struct HTTPResponse {
     }
 }
 
-enum HTTPStatusCode {
+enum HTTPStatusCode: Equatable {
     case ok
     case notFound
     case unprocessableEntity

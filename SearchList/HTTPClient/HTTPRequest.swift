@@ -5,7 +5,7 @@
 
 import Foundation
 
-struct HTTPRequest {
+struct HTTPRequest: Equatable {
     let url: URL
     let queries: [URLQueryItem]
     let headers: [String: String]
@@ -38,7 +38,7 @@ struct HTTPRequest {
 
 
 
-enum HTTPMethod {
+enum HTTPMethod: Equatable {
     case get
     case post(payload: Data?)
 

@@ -21,7 +21,7 @@ class HTTPClientTests: XCTestCase {
         )
 
         // Act
-        AsyncTestKit.wait(testCase: self) {
+        PromiseTestKit.waitGuarantee(testCase: self) {
             return client.fetch(request: request)
                 .done { result in
 
@@ -43,7 +43,7 @@ class HTTPClientTests: XCTestCase {
         )
 
         // Act
-        AsyncTestKit.wait(testCase: self) {
+        PromiseTestKit.waitGuarantee(testCase: self) {
             return client.fetch(request: request)
                 .done { result in
 

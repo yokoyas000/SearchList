@@ -5,7 +5,7 @@
 
 import Foundation
 
-enum HTTPClientError: Error {
+enum HTTPClientError: Error, Equatable {
     // リクエストの作成に失敗した場合
     case failedCreatingRequest(debugInfo: HTTPRequest)
 
@@ -24,7 +24,7 @@ enum HTTPClientError: Error {
         全てのエラーコードを定義するのは大変かつ現状不要なので, 主要なもののみ定義する
      SEE: https://developer.apple.com/documentation/foundation/1508628-url_loading_system_error_codes
      **/
-    enum URLLoadingSystemError: Error {
+    enum URLLoadingSystemError: Error, Equatable {
         case timeout
         case cancelled
         case cannotFindHost
