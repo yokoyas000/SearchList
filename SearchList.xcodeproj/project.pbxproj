@@ -46,6 +46,8 @@
 		3EC69A9620D922D200EFEB72 /* Rswift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4A1AB920D7960D007D58D1 /* Rswift.framework */; };
 		3EC69A9720D922D500EFEB72 /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EC69A8720D8DD4100EFEB72 /* PromiseKit.framework */; };
 		3EC69A9820D922D800EFEB72 /* MirrorDiffKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EC69A9420D9228B00EFEB72 /* MirrorDiffKit.framework */; };
+		3EC69A9B20DB860000EFEB72 /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EC69A9920DB860000EFEB72 /* RxBlocking.framework */; };
+		3EC69A9C20DB860000EFEB72 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EC69A9A20DB860000EFEB72 /* RxSwift.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +113,8 @@
 		3E4A1AC020D7A518007D58D1 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		3EC69A8720D8DD4100EFEB72 /* PromiseKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PromiseKit.framework; path = Carthage/Build/iOS/PromiseKit.framework; sourceTree = "<group>"; };
 		3EC69A9420D9228B00EFEB72 /* MirrorDiffKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MirrorDiffKit.framework; path = Carthage/Build/iOS/MirrorDiffKit.framework; sourceTree = "<group>"; };
+		3EC69A9920DB860000EFEB72 /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
+		3EC69A9A20DB860000EFEB72 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +129,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3EC69A9B20DB860000EFEB72 /* RxBlocking.framework in Frameworks */,
+				3EC69A9C20DB860000EFEB72 /* RxSwift.framework in Frameworks */,
 				3EC69A9620D922D200EFEB72 /* Rswift.framework in Frameworks */,
 				3EC69A9720D922D500EFEB72 /* PromiseKit.framework in Frameworks */,
 				3EC69A9820D922D800EFEB72 /* MirrorDiffKit.framework in Frameworks */,
@@ -385,6 +391,8 @@
 		3E4A1AB820D7960C007D58D1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3EC69A9920DB860000EFEB72 /* RxBlocking.framework */,
+				3EC69A9A20DB860000EFEB72 /* RxSwift.framework */,
 				3EC69A9420D9228B00EFEB72 /* MirrorDiffKit.framework */,
 				3EC69A8720D8DD4100EFEB72 /* PromiseKit.framework */,
 				3E4A1AB920D7960D007D58D1 /* Rswift.framework */,
@@ -516,12 +524,16 @@
 				"$(SRCROOT)/Carthage/Build/iOS/Rswift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/PromiseKit.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/MirrorDiffKit.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxBlocking.framework",
 			);
 			name = Carthage;
 			outputPaths = (
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Rswift.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/PromiseKit.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/MirrorDiffKit.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxSwift.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxBlocking .framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
