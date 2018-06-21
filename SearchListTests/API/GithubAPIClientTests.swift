@@ -99,9 +99,17 @@ class GithubAPIClientTests: XCTestCase {
                     .done { result in
                         switch (testCase.value.expected, result) {
                         case let (.success(expected), .success(actual)):
-                            XCTAssertEqual(expected, actual, line: testCase.key)
+                            XCTAssertEqual(
+                                expected, actual,
+                                diff(between: expected, and: actual),
+                                line: testCase.key
+                            )
                         case let (.failure(expected), .failure(actual)):
-                            XCTAssertEqual(expected, actual, line: testCase.key)
+                            XCTAssertEqual(
+                                expected, actual,
+                                diff(between: expected, and: actual),
+                                line: testCase.key
+                            )
                         default:
                             XCTFail(line: testCase.key)
                         }

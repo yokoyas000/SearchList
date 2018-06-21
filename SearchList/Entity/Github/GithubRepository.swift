@@ -5,6 +5,7 @@
 
 import Foundation
 
+// Github リポジトリに対応する構造体
 struct GithubRepository: Equatable {
     let id: GithubRepositoryID
     let name: String

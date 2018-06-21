@@ -11,7 +11,7 @@ class GithubSearchRepositoriesAPI_ResponseTests: XCTestCase {
     func testDecode() {
         XCTAssertEqual(
             GithubSearchRepositoriesAPIResponseCatalog.twoRepositories.expected,
-            try! GithubSearchRepositoriesAPIResponse.create(
+            try! GithubSearchRepositoriesAPI.Response.create(
                 from: GithubSearchRepositoriesAPIResponseCatalog.twoRepositories.responseData
             ),
             GithubSearchRepositoriesAPIResponseCatalog.twoRepositories.description
