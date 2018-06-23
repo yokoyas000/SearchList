@@ -6,17 +6,11 @@
 import Foundation
 import PromiseKit
 
-protocol GithubSearchRepositoriesAPIProtocol {
-    func fetch(word: String, page: Int?, perPage: Int?) -> Guarantee<Result<[GithubRepository], GithubAPIError>>
-}
-
-
-
 /**
  Githubの検索APIを利用して検索結果を取得するクラス
  see: https://developer.github.com/v3/search/#search-repositories
  **/
-struct GithubSearchRepositoriesAPI: GithubSearchRepositoriesAPIProtocol {
+struct GithubSearchRepositoriesAPI: GithubRepositoryDataSourceProtocol {
     private static let apiPath = "/search/repositories"
     private let apiClient: GithubAPIClientProtocol
 
@@ -24,11 +18,11 @@ struct GithubSearchRepositoriesAPI: GithubSearchRepositoriesAPIProtocol {
         self.apiClient = apiClient
     }
 
-    func fetch(word: String, page: Int? = nil, perPage: Int? = nil) -> Guarantee<Result<[GithubRepository], GithubAPIError>> {
+    func search(word: String, page: Int? = nil, perPage: Int? = nil) -> Guarantee<Result<[GithubRepository], DataSourceError>> {
         return self.apiClient.fetch(
                 request: self.githubRequest(word: word, page: page, parPage: perPage)
             )
-            .map { result -> Result<[GithubRepository], GithubAPIError> in
+            .map { result -> Result<[GithubRepository], DataSourceError> in
                 switch result {
                 case .success(let response):
                     do {
@@ -42,8 +36,8 @@ struct GithubSearchRepositoriesAPI: GithubSearchRepositoriesAPIProtocol {
                         ))
                     }
 
-                case .failure(let error):
-                    return .failure(.apiClientError(error: error))
+                case .failure(_):
+                    return .failure(.networkError)
                 }
             }
     }
@@ -63,4 +57,5 @@ struct GithubSearchRepositoriesAPI: GithubSearchRepositoriesAPIProtocol {
             method: .get
         )
     }
+
 }

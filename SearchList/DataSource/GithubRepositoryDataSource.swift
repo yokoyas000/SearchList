@@ -5,25 +5,7 @@
 
 import PromiseKit
 
-// TODO: リポジトリ層
-// "Repository" という命名は Gihub 内で使われている為、 DataSource とした
+// NOTE: "Repository" という命名は Github 内で使われている為、 DataSource とした
 protocol GithubRepositoryDataSourceProtocol {
-    func get() -> Promise<GithubRepository>
-}
-
-
-
-struct GithubRepositoryDataSource {
-    let api: GithubSearchRepositoriesAPIProtocol
-
-    init(using api: GithubSearchRepositoriesAPIProtocol) {
-        self.api = api
-    }
-
-    func get() -> Promise<[GithubRepository]> {
-        return api.get(word: "wwdc")
-            .map { response in
-                response.repositories
-            }
-    }
+    func search(word: String, page: Int?, perPage: Int?) -> Guarantee<Result<[GithubRepository], DataSourceError>>
 }

@@ -13,7 +13,7 @@ class GithubSearchRepositoriesAPITests: XCTestCase {
     struct TestCase {
         let description: String
         let apiClientResult: GithubAPIClientResult
-        let expected: SearchList.Result<[GithubRepository], GithubAPIError>
+        let expected: SearchList.Result<[GithubRepository], DataSourceError>
     }
 
     // APIClient へ想定通りのリクエストを渡せているか確認する
@@ -38,7 +38,7 @@ class GithubSearchRepositoriesAPITests: XCTestCase {
 
         // Act
         PromiseTestKit.wait(testCase: self) {
-            return api.fetch(
+            return api.search(
                     word: testParams.word,
                     page: testParams.page,
                     perPage: testParams.perPage
@@ -80,7 +80,7 @@ class GithubSearchRepositoriesAPITests: XCTestCase {
             #line: TestCase(
                 description: "APIClient が Error を返した場合",
                 apiClientResult: .failure(.invalidStatusCode(code: .notFound)),
-                expected: .failure(.apiClientError(error: .invalidStatusCode(code: .notFound)))
+                expected: .failure(.networkError)
             ),
             #line: TestCase(
                 description: "レスポンスを構造体へ変換する工程で Error が生じた場合",
@@ -109,8 +109,8 @@ class GithubSearchRepositoriesAPITests: XCTestCase {
             )
 
             PromiseTestKit.wait(testCase: self) {
-                return api.fetch(word: "test")
-                    .done { (result: SearchList.Result<[GithubRepository], GithubAPIError>) in
+                return api.search(word: "test")
+                    .done { (result: SearchList.Result<[GithubRepository], DataSourceError>) in
                         switch (testCase.value.expected, result) {
                         case let (.success(expected), .success(actual)):
                             XCTAssertEqual(
