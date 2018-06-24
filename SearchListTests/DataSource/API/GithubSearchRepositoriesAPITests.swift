@@ -80,7 +80,7 @@ class GithubSearchRepositoriesAPITests: XCTestCase {
             #line: TestCase(
                 description: "APIClient が Error を返した場合",
                 apiClientResult: .failure(.invalidStatusCode(code: .notFound)),
-                expected: .failure(.networkError)
+                expected: .failure(.networkError(debugInfo: "Failed GET: /search/repositories"))
             ),
             #line: TestCase(
                 description: "レスポンスを構造体へ変換する工程で Error が生じた場合",

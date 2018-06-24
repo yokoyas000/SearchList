@@ -5,7 +5,7 @@
 
 enum DataSourceError: Error, Equatable {
     // 外部との通信で何かしら問題があった場合
-    case networkError
+    case networkError(debugInfo: String)
 
     // 構造体への変換に失敗した場合
     case failedTransformFromData(debugInfo: String)

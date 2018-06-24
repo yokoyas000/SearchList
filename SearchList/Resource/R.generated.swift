@@ -36,8 +36,23 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.nib` struct is generated, and contains static references to 0 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 2 nibs.
   struct nib {
+    /// Nib `GithubRepositoriesListTableView`.
+    static let githubRepositoriesListTableView = _R.nib._GithubRepositoriesListTableView()
+    /// Nib `SearchGithubRepositoriesView`.
+    static let searchGithubRepositoriesView = _R.nib._SearchGithubRepositoriesView()
+    
+    /// `UINib(name: "GithubRepositoriesListTableView", in: bundle)`
+    static func githubRepositoriesListTableView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.githubRepositoriesListTableView)
+    }
+    
+    /// `UINib(name: "SearchGithubRepositoriesView", in: bundle)`
+    static func searchGithubRepositoriesView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.searchGithubRepositoriesView)
+    }
+    
     fileprivate init() {}
   }
   
@@ -51,21 +66,28 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.storyboard` struct is generated, and contains static references to 2 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 3 storyboards.
   struct storyboard {
+    /// Storyboard `GithubRepositoriesListViewController`.
+    static let githubRepositoriesListViewController = _R.storyboard.githubRepositoriesListViewController()
     /// Storyboard `LaunchScreen`.
     static let launchScreen = _R.storyboard.launchScreen()
-    /// Storyboard `Main`.
-    static let main = _R.storyboard.main()
+    /// Storyboard `SearchGithubRepositoriesViewController`.
+    static let searchGithubRepositoriesViewController = _R.storyboard.searchGithubRepositoriesViewController()
+    
+    /// `UIStoryboard(name: "GithubRepositoriesListViewController", bundle: ...)`
+    static func githubRepositoriesListViewController(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.githubRepositoriesListViewController)
+    }
     
     /// `UIStoryboard(name: "LaunchScreen", bundle: ...)`
     static func launchScreen(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.launchScreen)
     }
     
-    /// `UIStoryboard(name: "Main", bundle: ...)`
-    static func main(_: Void = ()) -> UIKit.UIStoryboard {
-      return UIKit.UIStoryboard(resource: R.storyboard.main)
+    /// `UIStoryboard(name: "SearchGithubRepositoriesViewController", bundle: ...)`
+    static func searchGithubRepositoriesViewController(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.searchGithubRepositoriesViewController)
     }
     
     fileprivate init() {}
@@ -78,7 +100,7 @@ struct R: Rswift.Validatable {
   
   fileprivate struct intern: Rswift.Validatable {
     fileprivate static func validate() throws {
-      // There are no resources to validate
+      try _R.validate()
     }
     
     fileprivate init() {}
@@ -89,12 +111,49 @@ struct R: Rswift.Validatable {
   fileprivate init() {}
 }
 
-struct _R {
+struct _R: Rswift.Validatable {
+  static func validate() throws {
+    try storyboard.validate()
+  }
+  
   struct nib {
+    struct _GithubRepositoriesListTableView: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "GithubRepositoriesListTableView"
+      
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [NSObject : AnyObject]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+      
+      fileprivate init() {}
+    }
+    
+    struct _SearchGithubRepositoriesView: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "SearchGithubRepositoriesView"
+      
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [NSObject : AnyObject]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+      
+      fileprivate init() {}
+    }
+    
     fileprivate init() {}
   }
   
-  struct storyboard {
+  struct storyboard: Rswift.Validatable {
+    static func validate() throws {
+      try searchGithubRepositoriesViewController.validate()
+    }
+    
+    struct githubRepositoriesListViewController: Rswift.StoryboardResourceType {
+      let bundle = R.hostingBundle
+      let name = "GithubRepositoriesListViewController"
+      
+      fileprivate init() {}
+    }
+    
     struct launchScreen: Rswift.StoryboardResourceWithInitialControllerType {
       typealias InitialController = UIKit.UIViewController
       
@@ -104,11 +163,20 @@ struct _R {
       fileprivate init() {}
     }
     
-    struct main: Rswift.StoryboardResourceWithInitialControllerType {
-      typealias InitialController = ViewController
+    struct searchGithubRepositoriesViewController: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = SearchGithubRepositoriesViewController
       
       let bundle = R.hostingBundle
-      let name = "Main"
+      let name = "SearchGithubRepositoriesViewController"
+      let searchGithubRepositoriesViewController = StoryboardViewControllerResource<SearchGithubRepositoriesViewController>(identifier: "SearchGithubRepositoriesViewController")
+      
+      func searchGithubRepositoriesViewController(_: Void = ()) -> SearchGithubRepositoriesViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: searchGithubRepositoriesViewController)
+      }
+      
+      static func validate() throws {
+        if _R.storyboard.searchGithubRepositoriesViewController().searchGithubRepositoriesViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'searchGithubRepositoriesViewController' could not be loaded from storyboard 'SearchGithubRepositoriesViewController' as 'SearchGithubRepositoriesViewController'.") }
+      }
       
       fileprivate init() {}
     }

@@ -37,7 +37,7 @@ struct GithubSearchRepositoriesAPI: GithubRepositoryDataSourceProtocol {
                     }
 
                 case .failure(_):
-                    return .failure(.networkError)
+                    return .failure(.networkError(debugInfo: "Failed GET: \(GithubSearchRepositoriesAPI.apiPath)"))
                 }
             }
     }
