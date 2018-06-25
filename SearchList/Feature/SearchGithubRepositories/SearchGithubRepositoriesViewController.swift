@@ -34,10 +34,8 @@ class SearchGithubRepositoriesViewController: UIViewController {
 
         self.controller = SearchGithubRepositoriesController(
             handle: rootView,
-            searchModel: SearchGithubRepositoriesWithTextModel(
-                searchModel: searchModel,
-                readOnly: textStore
-            ),
+            searchModel: searchModel,
+            textStore: textStore,
             textModel: searchTextModel
         )
 

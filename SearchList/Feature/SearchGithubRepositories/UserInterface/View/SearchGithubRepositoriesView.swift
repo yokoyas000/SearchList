@@ -12,6 +12,8 @@ protocol SearchGithubRepositoriesViewProtocol {
     var searchLabel: UILabel! { get set }
 }
 
+
+
 class SearchGithubRepositoriesView: UIView, SearchGithubRepositoriesViewProtocol {
     @IBOutlet weak var searchWordTextField: UITextField!
     @IBOutlet weak var searchButton: SearchGithubRepositoriesButton!
