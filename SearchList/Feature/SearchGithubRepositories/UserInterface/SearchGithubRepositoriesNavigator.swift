@@ -35,11 +35,15 @@ class SearchGithubRepositoriesNavigator {
     }
 
     private func navigate(with successResult: SearchGithubRepositoriesState.SearchResult) {
-        let next = GithubRepositoriesListViewController.create(
+        guard let next = GithubRepositoriesListViewController.create(
             apiClient: self.navigationArgs,
             firstRepositories: successResult.repositories,
             searchParams: successResult.params,
             perPage: Const.SearchGithubRepositories.listPerPage
-        )
+        ) else {
+            // MEMO: プロダクトでないので何もしないが、プロダクトならエラー検知なりハンドリングなりなんかする
+            return
+        }
+        self.navigator.navigate(next: next, animated: true)
     }
 }

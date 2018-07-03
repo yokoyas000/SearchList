@@ -11,13 +11,13 @@ protocol NavigatorProtocol {
 
 
 class Navigator: NavigatorProtocol {
-    private weak var navigationController: UINavigationController?
+    private weak var viewController: UIViewController?
 
-    init(navigationController: UINavigationController?) {
-        self.navigationController = navigationController
+    init(viewController: UIViewController?) {
+        self.viewController = viewController
     }
 
     func navigate(next: UIViewController, animated: Bool) {
-        self.navigationController?.pushViewController(next, animated: animated)
+        self.viewController?.navigationController?.pushViewController(next, animated: true)
     }
 }

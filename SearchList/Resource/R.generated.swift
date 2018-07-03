@@ -38,14 +38,14 @@ struct R: Rswift.Validatable {
   
   /// This `R.nib` struct is generated, and contains static references to 2 nibs.
   struct nib {
-    /// Nib `GithubRepositoriesListTableView`.
-    static let githubRepositoriesListTableView = _R.nib._GithubRepositoriesListTableView()
+    /// Nib `GithubRepositoriesListCell`.
+    static let githubRepositoriesListCell = _R.nib._GithubRepositoriesListCell()
     /// Nib `SearchGithubRepositoriesView`.
     static let searchGithubRepositoriesView = _R.nib._SearchGithubRepositoriesView()
     
-    /// `UINib(name: "GithubRepositoriesListTableView", in: bundle)`
-    static func githubRepositoriesListTableView(_: Void = ()) -> UIKit.UINib {
-      return UIKit.UINib(resource: R.nib.githubRepositoriesListTableView)
+    /// `UINib(name: "GithubRepositoriesListCell", in: bundle)`
+    static func githubRepositoriesListCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.githubRepositoriesListCell)
     }
     
     /// `UINib(name: "SearchGithubRepositoriesView", in: bundle)`
@@ -56,8 +56,11 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.reuseIdentifier` struct is generated, and contains static references to 0 reuse identifiers.
+  /// This `R.reuseIdentifier` struct is generated, and contains static references to 1 reuse identifiers.
   struct reuseIdentifier {
+    /// Reuse identifier `GithubRepositoriesListCell`.
+    static let githubRepositoriesListCell: Rswift.ReuseIdentifier<GithubRepositoriesListCell> = Rswift.ReuseIdentifier(identifier: "GithubRepositoriesListCell")
+    
     fileprivate init() {}
   }
   
@@ -148,11 +151,21 @@ struct _R: Rswift.Validatable {
   struct storyboard: Rswift.Validatable {
     static func validate() throws {
       try searchGithubRepositoriesViewController.validate()
+      try githubRepositoriesListViewController.validate()
     }
     
-    struct githubRepositoriesListViewController: Rswift.StoryboardResourceType {
+    struct githubRepositoriesListViewController: Rswift.StoryboardResourceType, Rswift.Validatable {
       let bundle = R.hostingBundle
+      let githubRepositoriesListViewController = StoryboardViewControllerResource<GithubRepositoriesListViewController>(identifier: "GithubRepositoriesListViewController")
       let name = "GithubRepositoriesListViewController"
+      
+      func githubRepositoriesListViewController(_: Void = ()) -> GithubRepositoriesListViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: githubRepositoriesListViewController)
+      }
+      
+      static func validate() throws {
+        if _R.storyboard.githubRepositoriesListViewController().githubRepositoriesListViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'githubRepositoriesListViewController' could not be loaded from storyboard 'GithubRepositoriesListViewController' as 'GithubRepositoriesListViewController'.") }
+      }
       
       fileprivate init() {}
     }

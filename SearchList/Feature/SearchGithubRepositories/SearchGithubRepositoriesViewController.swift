@@ -11,7 +11,9 @@ class SearchGithubRepositoriesViewController: UIViewController {
     private var renderer: SearchGithubRepositoriesRenderer?
     private var navigator: SearchGithubRepositoriesNavigator?
 
-    static func create(apiClient: GithubAPIClient) -> SearchGithubRepositoriesViewController? {
+    static func create(
+        apiClient: GithubAPIClient
+    ) -> SearchGithubRepositoriesViewController? {
         let vc = R.storyboard.searchGithubRepositoriesViewController.searchGithubRepositoriesViewController()
         vc?.apiClient = apiClient
 
@@ -41,7 +43,7 @@ class SearchGithubRepositoriesViewController: UIViewController {
         )
 
         self.navigator = SearchGithubRepositoriesNavigator(
-            navigator: Navigator(navigationController: self.navigationController),
+            navigator: Navigator(viewController: self),
             navigationArgs: self.apiClient,
             store: repositoriesStore
         )
