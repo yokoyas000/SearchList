@@ -37,10 +37,11 @@
 
 - View
     - 画面の構築、表示、更新
+    - 主に、UIKit, xib, storyboard が担っている部分
 - Controller
-    - ユーザー入力をDomainLayerへ伝える形へ変換する
+    - ユーザー入力を Domain Layer へ伝える(変換する)
 - Renderer(Presenter)
-    - Store の変更を受け取り、結果を人間が見やすい形へ変換してViewを更新する
+    - Store の変更(= Domain Layer の変更)を受け取り、結果を人間が見やすい形へ変換してViewを更新する
 
 ## ViewControlelr について
 - ViewController は、強いて言えば Presentation Layer の位置にあるが、基本は Comporserに徹する(= MV*の関係作り を行う)
