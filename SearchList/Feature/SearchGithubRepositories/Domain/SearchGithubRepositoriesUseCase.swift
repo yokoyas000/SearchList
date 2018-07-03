@@ -5,14 +5,14 @@
 
 import PromiseKit
 
-protocol SearchGithubRepositoriesModelProtocol {
+protocol SearchGithubRepositoriesUseCaseProtocol {
     func search(text: String)
 }
 
 
 
 // GithubRepositoryを検索する
-class SearchGithubRepositoriesModel: SearchGithubRepositoriesModelProtocol {
+class SearchGithubRepositoriesUseCase: SearchGithubRepositoriesUseCaseProtocol {
     private let store: Store<SearchGithubRepositoriesState>
     private let dataSource: GithubRepositoryDataSourceProtocol
 

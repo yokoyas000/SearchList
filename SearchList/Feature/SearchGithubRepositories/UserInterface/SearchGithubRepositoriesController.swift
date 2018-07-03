@@ -6,19 +6,19 @@
 import UIKit
 
 class SearchGithubRepositoriesController: NSObject {
-    private let searchModel: SearchGithubRepositoriesModelProtocol
+    private let searchUseCase: SearchGithubRepositoriesUseCaseProtocol
     private let textStore: Store<SearchGithubRepositoriesTextState>
-    private let textModel: SearchGithubRepositoriesTextModelProtocol
+    private let textUseCase: SearchGithubRepositoriesTextUseCaseProtocol
 
     init(
         handle view: SearchGithubRepositoriesViewProtocol,
-        searchModel: SearchGithubRepositoriesModelProtocol,
+        searchUseCase: SearchGithubRepositoriesUseCaseProtocol,
         textStore: Store<SearchGithubRepositoriesTextState>,
-        textModel: SearchGithubRepositoriesTextModelProtocol
+        textUseCase: SearchGithubRepositoriesTextUseCaseProtocol
     ) {
-        self.searchModel = searchModel
+        self.searchUseCase = searchUseCase
         self.textStore = textStore
-        self.textModel = textModel
+        self.textUseCase = textUseCase
 
         super.init()
 
@@ -32,11 +32,11 @@ class SearchGithubRepositoriesController: NSObject {
             // 何もしない
             return
         case .valid(let text):
-            self.searchModel.search(text: text)
+            self.searchUseCase.search(text: text)
         }
     }
 
     @objc func didChangeTextField(_ textField: UITextField) {
-        self.textModel.validate(text: textField.text)
+        self.textUseCase.validate(text: textField.text)
     }
 }

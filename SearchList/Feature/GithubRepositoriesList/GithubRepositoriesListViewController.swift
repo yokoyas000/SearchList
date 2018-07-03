@@ -7,7 +7,7 @@ import UIKit
 
 class GithubRepositoriesListViewController: UITableViewController {
     private var apiClient: GithubAPIClientProtocol!
-    private var repositoriesModel: GithubRepositoriesListModelProtocol!
+    private var repositoriesUseCase: GithubRepositoriesListUseCaseProtocol!
     private var repositoriesStore: Store<GithubRepositoriesListState>!
 
     private var renderer: GithubRepositoriesListRenderer?
@@ -25,7 +25,7 @@ class GithubRepositoriesListViewController: UITableViewController {
         let store = Store<GithubRepositoriesListState>(
             initialState: .first(list: firstRepositories)
         )
-        let model =  GithubRepositoriesListModel(
+        let usecase =  GithubRepositoriesListUseCase(
             searchParams: searchParams,
             perPage: perPage,
             dataSource: GithubSearchRepositoriesAPI(apiClient: apiClient),
@@ -33,7 +33,7 @@ class GithubRepositoriesListViewController: UITableViewController {
         )
 
         vc?.repositoriesStore = store
-        vc?.repositoriesModel = model
+        vc?.repositoriesUseCase = usecase
 
         return vc
     }
@@ -47,7 +47,7 @@ class GithubRepositoriesListViewController: UITableViewController {
         )
         self.tableView.dataSource = self.renderer
 
-        self.controller = GithubRepositoriesListController(command: self.repositoriesModel)
+        self.controller = GithubRepositoriesListController(command: self.repositoriesUseCase)
         self.tableView.delegate = self.controller
     }
 }

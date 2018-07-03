@@ -6,12 +6,12 @@
 import UIKit
 
 class GithubRepositoriesListController: NSObject {
-    private let model: GithubRepositoriesListModelProtocol
+    private let useCase: GithubRepositoriesListUseCaseProtocol
 
     init(
-        command model: GithubRepositoriesListModelProtocol
+        command useCase: GithubRepositoriesListUseCaseProtocol
     ) {
-        self.model = model
+        self.useCase = useCase
     }
 }
 
@@ -21,7 +21,7 @@ extension GithubRepositoriesListController: UITableViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if scrollView.isDragging
                && scrollView.contentOffset.y + scrollView.frame.size.height > scrollView.contentSize.height {
-            self.model.getNextPage()
+            self.useCase.getNextPage()
         }
     }
 }

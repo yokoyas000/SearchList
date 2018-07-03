@@ -5,11 +5,11 @@
 
 import RxSwift
 
-protocol SearchGithubRepositoriesTextModelProtocol {
+protocol SearchGithubRepositoriesTextUseCaseProtocol {
     func validate(text: String?)
 }
 
-class SearchGithubRepositoriesTextModel: SearchGithubRepositoriesTextModelProtocol {
+class SearchGithubRepositoriesTextUseCase: SearchGithubRepositoriesTextUseCaseProtocol {
     private let store: Store<SearchGithubRepositoriesTextState>
 
     init(store: Store<SearchGithubRepositoriesTextState>) {

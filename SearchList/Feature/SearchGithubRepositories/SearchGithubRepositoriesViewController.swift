@@ -25,19 +25,19 @@ class SearchGithubRepositoriesViewController: UIViewController {
         self.view = rootView
 
         let repositoriesStore = Store<SearchGithubRepositoriesState>(initialState: .first)
-        let searchModel = SearchGithubRepositoriesModel(
+        let searchUseCase = SearchGithubRepositoriesUseCase(
             store: repositoriesStore,
             dataSource: GithubSearchRepositoriesAPI(apiClient: self.apiClient)
         )
 
         let textStore = Store<SearchGithubRepositoriesTextState>(initialState: .invalid)
-        let searchTextModel = SearchGithubRepositoriesTextModel(store: textStore)
+        let searchTextUseCase = SearchGithubRepositoriesTextUseCase(store: textStore)
 
         self.controller = SearchGithubRepositoriesController(
             handle: rootView,
-            searchModel: searchModel,
+            searchUseCase: searchUseCase,
             textStore: textStore,
-            textModel: searchTextModel
+            textUseCase: searchTextUseCase
         )
 
         self.navigator = SearchGithubRepositoriesNavigator(

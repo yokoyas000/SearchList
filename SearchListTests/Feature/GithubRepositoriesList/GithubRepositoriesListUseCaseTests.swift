@@ -87,7 +87,7 @@ class GithubRepositoriesListTests: XCTestCase {
         testCases.forEach { testCase in
             let dataSourceSpy = GithubRepositoryDataSourceSpy()
 
-            let model = GithubRepositoriesListModel(
+            let model = GithubRepositoriesListUseCase(
                 searchParams: SearchGithubRepositoriesParams(text: "test"),
                 perPage: testCase.value.perPage,
                 dataSource: dataSourceSpy,
@@ -201,7 +201,7 @@ class GithubRepositoriesListTests: XCTestCase {
 
         testCases.forEach { testCase in
             let storeSpy = StoreSpy<GithubRepositoriesListState>(initialState: testCase.value.currentState)
-            let model = GithubRepositoriesListModel(
+            let model = GithubRepositoriesListUseCase(
                 searchParams: dummy.searchParams,
                 perPage: dummy.perPage,
                 dataSource: dummy.dataSource,

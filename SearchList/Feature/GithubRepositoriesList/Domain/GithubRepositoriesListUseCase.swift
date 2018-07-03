@@ -5,13 +5,13 @@
 
 import PromiseKit
 
-protocol GithubRepositoriesListModelProtocol {
+protocol GithubRepositoriesListUseCaseProtocol {
     func getNextPage()
 }
 
 
 
-class GithubRepositoriesListModel: GithubRepositoriesListModelProtocol {
+class GithubRepositoriesListUseCase: GithubRepositoriesListUseCaseProtocol {
     private let searchParams: SearchGithubRepositoriesParams
     private let perPage: Int
     private let dataSource: GithubRepositoryDataSourceProtocol
