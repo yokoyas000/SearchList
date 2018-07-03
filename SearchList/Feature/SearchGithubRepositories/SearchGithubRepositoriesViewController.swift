@@ -9,9 +9,10 @@ class SearchGithubRepositoriesViewController: UIViewController {
     private var apiClient: GithubAPIClient!
     private var controller: SearchGithubRepositoriesController?
     private var renderer: SearchGithubRepositoriesRenderer?
+    private var navigator: SearchGithubRepositoriesNavigator?
 
     static func create(apiClient: GithubAPIClient) -> SearchGithubRepositoriesViewController? {
-        let vc = R.storyboard.searchGithubRepositoriesViewController().instantiateInitialViewController() as? SearchGithubRepositoriesViewController
+        let vc = R.storyboard.searchGithubRepositoriesViewController.searchGithubRepositoriesViewController()
         vc?.apiClient = apiClient
 
         return vc
@@ -37,6 +38,14 @@ class SearchGithubRepositoriesViewController: UIViewController {
             searchModel: searchModel,
             textStore: textStore,
             textModel: searchTextModel
+        )
+
+        self.navigator = SearchGithubRepositoriesNavigator(
+            navigator: Navigator(navigationController: self.navigationController),
+            navigationArgs: (
+                apiClient: self.apiClient,
+                store: repositoriesStore
+            )
         )
 
         self.renderer = SearchGithubRepositoriesRenderer(

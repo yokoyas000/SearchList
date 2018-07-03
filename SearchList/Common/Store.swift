@@ -6,6 +6,7 @@
 import RxSwift
 
 class Store<State> {
+
     let state: Observable<State>
 
     var currentState: State {
@@ -24,4 +25,5 @@ class Store<State> {
     func transition(next state: State) {
         self.subject.onNext(state)
     }
+
 }

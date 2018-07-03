@@ -39,7 +39,7 @@ class GithubSearchRepositoriesAPITests: XCTestCase {
         // Act
         PromiseTestKit.wait(testCase: self) {
             return api.search(
-                    word: testParams.word,
+                    text: testParams.word,
                     page: testParams.page,
                     perPage: testParams.perPage
                 )
@@ -109,7 +109,7 @@ class GithubSearchRepositoriesAPITests: XCTestCase {
             )
 
             PromiseTestKit.wait(testCase: self) {
-                return api.search(word: "test")
+                return api.search(text: "test")
                     .done { (result: SearchList.Result<[GithubRepository], DataSourceError>) in
                         switch (testCase.value.expected, result) {
                         case let (.success(expected), .success(actual)):

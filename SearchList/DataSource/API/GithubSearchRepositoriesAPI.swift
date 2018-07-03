@@ -18,9 +18,9 @@ struct GithubSearchRepositoriesAPI: GithubRepositoryDataSourceProtocol {
         self.apiClient = apiClient
     }
 
-    func search(word: String, page: Int? = nil, perPage: Int? = nil) -> Guarantee<Result<[GithubRepository], DataSourceError>> {
+    func search(text: String, page: Int? = nil, perPage: Int? = nil) -> Guarantee<Result<[GithubRepository], DataSourceError>> {
         return self.apiClient.fetch(
-                request: self.githubRequest(word: word, page: page, parPage: perPage)
+                request: self.githubRequest(text: text, page: page, parPage: perPage)
             )
             .map { result -> Result<[GithubRepository], DataSourceError> in
                 switch result {
@@ -42,8 +42,8 @@ struct GithubSearchRepositoriesAPI: GithubRepositoryDataSourceProtocol {
             }
     }
 
-    private func githubRequest(word: String, page: Int?, parPage: Int?) -> GithubAPIRequest {
-        var queries = [URLQueryItem(name: "q", value: word)]
+    private func githubRequest(text: String, page: Int?, parPage: Int?) -> GithubAPIRequest {
+        var queries = [URLQueryItem(name: "q", value: text)]
         if let page = page {
             queries.append(URLQueryItem(name: "page", value: String(describing: page)))
         }

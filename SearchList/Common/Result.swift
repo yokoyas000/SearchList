@@ -25,3 +25,18 @@ enum Result<Value, E: Error> {
         }
     }
 }
+
+
+
+extension Result: Equatable where Value: Equatable, E: Equatable {
+    static func == (lhs: Result<Value, E>, rhs: Result<Value, E>) -> Bool {
+        switch (lhs, rhs) {
+        case let (.success(lvalue), .success(rvalue)):
+            return lvalue == rvalue
+        case let (.failure(lerror), .failure(rerror)):
+            return lerror == rerror
+        default:
+            return false
+        }
+    }
+}

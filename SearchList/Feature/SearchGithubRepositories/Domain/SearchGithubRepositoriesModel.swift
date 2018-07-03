@@ -32,7 +32,7 @@ class SearchGithubRepositoriesModel: SearchGithubRepositoriesModelProtocol {
             self.store.transition(next: .fetching)
         }
 
-        self.dataSource.search(word: text, page: 1, perPage: 20)
+        self.dataSource.search(text: text, page: 1, perPage: 20)
             .done { result in
                 self.store.transition(
                     next: self.state(by: result)

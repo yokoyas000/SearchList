@@ -7,5 +7,5 @@ import PromiseKit
 
 // NOTE: "Repository" という命名は Github 内で使われている為、 DataSource とした
 protocol GithubRepositoryDataSourceProtocol {
-    func search(word: String, page: Int?, perPage: Int?) -> Guarantee<Result<[GithubRepository], DataSourceError>>
+    func search(text: String, page: Int?, perPage: Int?) -> Guarantee<Result<[GithubRepository], DataSourceError>>
 }
