@@ -25,25 +25,34 @@ class SearchGithubRepositoriesUseCase: SearchGithubRepositoriesUseCaseProtocol {
     }
 
     func search(text: String) {
+        let params = SearchGithubRepositoriesParams(text: text)
+
         switch self.store.currentState {
         case .fetching:
             return
         case .first, .fetched:
-            self.store.transition(next: .fetching)
+            self.store.transition(
+                next: .fetching(for: params)
+            )
         }
 
         self.dataSource.search(text: text, page: 1, perPage: 20)
             .done { result in
                 self.store.transition(
-                    next: self.state(by: result)
+                    next: self.state(by: result, params: params)
                 )
             }
     }
 
-    private func state(by result: Result<[GithubRepository], DataSourceError>) -> SearchGithubRepositoriesState {
+    private func state(by result: Result<[GithubRepository], DataSourceError>, params: SearchGithubRepositoriesParams) -> SearchGithubRepositoriesState {
         switch result {
         case .success(let repositories):
-            return .fetched(.success(repositories))
+            return .fetched(.success(
+                SearchGithubRepositoriesState.SearchResult(
+                    repositories: repositories,
+                    params: params
+                )
+            ))
 
         case .failure(let error):
             let stateError: SearchGithubRepositoriesState.StateError

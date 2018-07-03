@@ -9,10 +9,15 @@ enum SearchGithubRepositoriesState {
     case first
 
     // 取得中
-    case fetching
+    case fetching(for: SearchGithubRepositoriesParams)
 
     // 取得結果<取得できたレポジトリ or エラー>
-    case fetched(Result<[GithubRepository], StateError>)
+    case fetched(Result<SearchResult, StateError>)
+
+    struct SearchResult {
+        let repositories: [GithubRepository]
+        let params: SearchGithubRepositoriesParams
+    }
 
     struct StateError: Error {
         let debugInfo: String

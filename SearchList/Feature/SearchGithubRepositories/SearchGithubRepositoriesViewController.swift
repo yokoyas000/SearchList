@@ -42,10 +42,8 @@ class SearchGithubRepositoriesViewController: UIViewController {
 
         self.navigator = SearchGithubRepositoriesNavigator(
             navigator: Navigator(navigationController: self.navigationController),
-            navigationArgs: (
-                apiClient: self.apiClient,
-                store: repositoriesStore
-            )
+            navigationArgs: self.apiClient,
+            store: repositoriesStore
         )
 
         self.renderer = SearchGithubRepositoriesRenderer(

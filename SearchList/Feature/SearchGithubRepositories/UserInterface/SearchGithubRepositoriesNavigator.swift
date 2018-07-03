@@ -9,11 +9,7 @@ import RxSwift
 
 class SearchGithubRepositoriesNavigator {
 
-    typealias NavigationArgs = (
-        // TODO: 循環参照なる気がする
-        apiClient: GithubAPIClient,
-        store: Store<SearchGithubRepositoriesState>
-    )
+    typealias NavigationArgs = GithubAPIClient
 
     private let navigator: NavigatorProtocol
     private let navigationArgs: NavigationArgs
@@ -21,23 +17,29 @@ class SearchGithubRepositoriesNavigator {
 
     init(
         navigator: NavigatorProtocol,
-        navigationArgs: NavigationArgs
+        navigationArgs: NavigationArgs,
+        store: Store<SearchGithubRepositoriesState>
     ) {
         self.navigator = navigator
         self.navigationArgs = navigationArgs
 
-        navigationArgs.store.state.subscribe(onNext: { [weak self] state in
+        store.state.subscribe(onNext: { [weak self] state in
                 switch state {
                 case .first, .fetching, .fetched(.failure):
                     return
-                case .fetched(.success(let repositories)):
-                    self?.navigate(with: repositories)
+                case .fetched(.success(let result)):
+                    self?.navigate(with: result)
                 }
             })
             .disposed(by: self.disposeBag)
     }
 
-    private func navigate(with repositories: [GithubRepository]) {
-        // TODO: 遷移
+    private func navigate(with successResult: SearchGithubRepositoriesState.SearchResult) {
+        let next = GithubRepositoriesListViewController.create(
+            apiClient: self.navigationArgs,
+            firstRepositories: successResult.repositories,
+            searchParams: successResult.params,
+            perPage: Const.SearchGithubRepositories.listPerPage
+        )
     }
 }

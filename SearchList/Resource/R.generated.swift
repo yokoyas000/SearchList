@@ -117,12 +117,15 @@ struct _R: Rswift.Validatable {
   }
   
   struct nib {
-    struct _GithubRepositoriesListTableView: Rswift.NibResourceType {
-      let bundle = R.hostingBundle
-      let name = "GithubRepositoriesListTableView"
+    struct _GithubRepositoriesListCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType {
+      typealias ReusableType = GithubRepositoriesListCell
       
-      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [NSObject : AnyObject]? = nil) -> UIKit.UIView? {
-        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      let bundle = R.hostingBundle
+      let identifier = "GithubRepositoriesListCell"
+      let name = "GithubRepositoriesListCell"
+      
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [NSObject : AnyObject]? = nil) -> GithubRepositoriesListCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? GithubRepositoriesListCell
       }
       
       fileprivate init() {}
