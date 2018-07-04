@@ -46,3 +46,13 @@
 ## ViewControlelr について
 - ViewController は、強いて言えば Presentation Layer の位置にあるが、基本は Comporserに徹する(= MV*の関係作り を行う)
 - ViewController はすでに画面のライフサイクル管理という重い責務があるため、これ以上仕事を増やさないために、Comporser役とした
+
+## 画面遷移について
+
+- 画面遷移はコードにより行なっています
+    - segueで遷移すると下記の問題があります
+        - 値渡しや、遷移時に処理(ログ記録など)を混ぜたい場合に不便
+        - storyboardで画面遷移する場合、複数人開発ではコンフリクトが発生しやすく、スケールしない
+- [Navigator](https://github.com/yokoyas000/SearchList/blob/master/SearchList/Common/Navigator.swift)
+- [SearchGithubRepositoriesNavigator](https://github.com/yokoyas000/SearchList/blob/master/SearchList/Feature/SearchGithubRepositories/UserInterface/SearchGithubRepositoriesNavigator.swift)
+    - Storeの変更を監視して、任意のタイミングで Navigator を利用して画面遷移している
