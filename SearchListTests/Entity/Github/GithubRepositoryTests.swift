@@ -19,7 +19,7 @@ class GithubRepositoryTests: XCTestCase {
 
         let expected = GithubRepository(
             id: GithubRepositoryID(34222505),
-            name: "WWDC",
+            name: "WWD",
             fullName: "insidegui/WWDC"
         )
 
