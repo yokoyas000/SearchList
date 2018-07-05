@@ -610,6 +610,15 @@
 			isa = PBXProject;
 			attributes = {
 				ORGANIZATIONNAME = yokoyas000;
+				TargetAttributes = {
+					35C02ECBB1D44FE19C4A9976 = {
+						DevelopmentTeam = WD76874MQJ;
+						ProvisioningStyle = Manual;
+					};
+					35C02FD25680ABA75CDF748E = {
+						DevelopmentTeam = WD76874MQJ;
+					};
+				};
 			};
 			buildConfigurationList = 35C020CF901456C463293D18 /* Build configuration list for PBXProject "SearchList" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -822,6 +831,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SearchList.app/SearchList";
+				DEVELOPMENT_TEAM = WD76874MQJ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -906,14 +916,20 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = WD76874MQJ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = SearchList/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = yokoyas000.SearchList;
+				PRODUCT_BUNDLE_IDENTIFIER = com.searchlist.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "84c8ebb3-38c1-43df-b202-57f6fc5bef1b";
+				PROVISIONING_PROFILE_SPECIFIER = "Search List AdHoc Distribution";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -923,6 +939,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SearchList.app/SearchList";
+				DEVELOPMENT_TEAM = WD76874MQJ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -941,14 +958,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = WD76874MQJ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = SearchList/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = yokoyas000.SearchList;
+				PRODUCT_BUNDLE_IDENTIFIER = com.searchlist.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "e8df09c4-6a48-4a3a-a0db-0be7dfe6dbf5";
+				PROVISIONING_PROFILE_SPECIFIER = "SearchList Development";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
