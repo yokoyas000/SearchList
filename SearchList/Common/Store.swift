@@ -12,7 +12,10 @@ class Store<State> {
     var currentState: State {
         // this try! is ok because subject can't error out or be disposed
         // SEE: https://github.com/ReactiveX/RxSwift/blob/faeb158ce76d355f3f9242fdd0258a9face62f37/RxCocoa/Traits/BehaviorRelay.swift#L27
+
+        // swiftlint:disable:next force_try
         return try! self.subject.value()
+        // swiftlint:disable:previous force_try
     }
 
     private let subject: BehaviorSubject<State>

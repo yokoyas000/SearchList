@@ -6,7 +6,7 @@
 @testable import SearchList
 import XCTest
 
-class GithubSearchRepositoriesAPI_ResponseTests: XCTestCase {
+class GithubSearchRepositoriesAPIResponseTests: XCTestCase {
 
     func testDecode() {
         XCTAssertEqual(

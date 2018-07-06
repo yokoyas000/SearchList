@@ -12,7 +12,7 @@ class GithubRepositoryTests: XCTestCase {
         let jsonData = """
         {
           "id": 34222505,
-          "name": "WWDC",   
+          "name": "WWDC",
           "full_name": "insidegui/WWDC"
         }
         """.data(using: .utf8)!
